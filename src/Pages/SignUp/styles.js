@@ -16,18 +16,25 @@ export const Form = styled.form`
   align-items: flex-start;
 
   > h1 {
-    font-size: 48px;
-    color: ${({ theme }) => theme.COLORS.ORANGE};
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
+    font-size: 4.8rem;
+    font-weight: 700;
+    color: ${({ theme }) => theme.COLORS.PRIMARY};
   }
 
   > h2 {
-    font-size: 24px;
-    margin: 48px 0;
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
+    color: ${({ theme }) => theme.COLORS.SUB_TITLE};
+    margin: 4.8rem 0;
   }
 
   > p {
-    font-size: 14px;
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
+    font-size: 1.4rem;
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
+    font-weight: 400;
+    color: ${({ theme }) => theme.COLORS.GRAY};
   }
 
   > div {

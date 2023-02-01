@@ -7,7 +7,6 @@ import { TextButton } from "../../Components/TextButton"
 export function SignUp(){
   return (
     <Container>
-      <Background />
       <Form>
         <h1>RocketMovies</h1>
         <p>Aplicação para acompanhar tudo que assistir.</p>
@@ -24,6 +23,7 @@ export function SignUp(){
           <TextButton icon={FiArrowLeft} title="Voltar para o login" />
         </div>
       </Form>
+      <Background />
     </Container>
   )
 }
