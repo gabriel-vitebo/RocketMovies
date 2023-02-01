@@ -4,9 +4,9 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: ${({ theme }) => theme.COLORS.BG_INPUT};
   color: ${({ theme }) => theme.COLORS.TEXT_INPUT};
-  margin-bottom: 0.8rem;
   border-radius: 1rem;
 
   > input {
