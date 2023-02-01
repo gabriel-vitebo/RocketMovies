@@ -2,6 +2,7 @@ export default {
   COLORS: {
     PRIMARY: "#FF859B",
     GRAY: "#CAC4CF",
+    LINE: "#3E3B47",
     SPAN: "#E5E5E5",
     SUB_TITLE: "#F4EDE8",
     TEXT_INPUT: "#948F99",
