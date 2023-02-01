@@ -1,4 +1,7 @@
-import { Container, Form } from "./styles"
+import { FiLock, FiMail } from "react-icons/fi"
+import { Container, Form, BackgroundImg } from "./styles"
+import { Input } from "../../Components/Input"
+import { Button } from "../../Components/Button"
 
 export function Singing() {
   return (
@@ -8,14 +11,25 @@ export function Singing() {
         <p>Aplicação para acompanhar tudo que assistir.</p>
         <h2>Faça seu login</h2>
 
-        {/* <Input />
-        <Input />
+        <Input
+          placeholder="E-mail"
+          type="text"
+          icon={FiMail}
+        />
 
-        <Button /> */}
+        <Input
+          placeholder="Senha"
+          type="password"
+          icon={FiLock}
+        />
 
-        <a href="#">Criar conta</a>
+        <Button title="Entrar" />
+
+        <div>
+          <a href="#">Criar conta</a>
+        </div>
       </Form>
-      {/* <Background/> */}
+      <BackgroundImg />
     </Container>
   )
 }
