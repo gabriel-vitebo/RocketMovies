@@ -15,4 +15,9 @@ export const Container = styled.button`
   &:disabled {
     opacity: 0.5;
   }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem
 `
