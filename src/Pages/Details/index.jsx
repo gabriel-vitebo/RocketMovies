@@ -3,21 +3,12 @@ import { Header } from "../../Components/Header"
 import { Button } from "../../Components/Button"
 import { Container, NewNote, Content } from "./styles"
 
-export function Home(){
+export function Details(){
   return (
     <>
     <Header />
     <Container>
-      <NewNote>
-        <h1>Meus filmes</h1>
-        <div>
-          <Button 
-          title="Adicionar filme"
-          icon={FiPlus}  
-          />
-        </div>
-      </NewNote>
-      <Content></Content>
+     
     </Container>
     </>
   )

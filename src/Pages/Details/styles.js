@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 1929px;
-  margin: 0 auto;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 105px auto;
+  grid-template-areas:
+  "header"
+  "content";
 `
 
 export const NewNote = styled.div`

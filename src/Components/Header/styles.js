@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   display: flex;
+  grid-area: header;
   width: 100%;
   height: 11.6rem;
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.LINE};
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 8rem;
   align-items: center;
 
   > h1 {
@@ -22,6 +24,7 @@ export const Container = styled.header`
 
 export const Profile = styled.div`
   display: flex;
+  align-items: center;
 
   > .setProfile {
 
@@ -43,6 +46,7 @@ export const Profile = styled.div`
       font-size: 1.4rem;
       font-weight: 400;
       color: ${({ theme }) => theme.COLORS.TEXT_INPUT};
+      border: none;
     }
   }
 
