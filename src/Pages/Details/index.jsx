@@ -1,10 +1,10 @@
 import { Header } from "../../Components/Header"
-import { FiArrowLeft, FiStar } from "react-icons/fi"
+import { FiArrowLeft, FiStar, FiClock } from "react-icons/fi"
 import { TextButton } from "../../Components/TextButton"
 import { Section } from "../../Components/Section"
 import { Tag } from "../../Components/Tag"
-import { Container, Content } from "./styles"
 import { Span } from "../../Components/Span"
+import { Container, Content, CreatedAt } from "./styles"
 
 export function Details(){
   return (
@@ -17,20 +17,28 @@ export function Details(){
             <div className="title-movie">
               <h1>Frozen</h1>
               <label>
-                < FiStar className="star-rating"/>
-                < FiStar className="star-rating-empaty"/>
+                <FiStar className="star-rating" />
+                <FiStar className="star-rating-empaty" />
                 <input type="radio" name="rating" id="rating1" />
               </label>
               <label>
+                <FiStar className="star-rating" />
+                <FiStar className="star-rating-empaty" />
                 <input type="radio" name="rating" id="rating2" />
               </label>
               <label>
+                <FiStar className="star-rating" />
+                <FiStar className="star-rating-empaty" />
                 <input type="radio" name="rating" id="rating3" />
               </label>
               <label>
+                <FiStar className="star-rating" />
+                <FiStar className="star-rating-empaty" />
                 <input type="radio" name="rating" id="rating4" />
               </label>
               <label>
+                <FiStar className="star-rating" />
+                <FiStar className="star-rating-empaty" />
                 <input type="radio" name="rating" id="rating5" />
               </label>
             </div>
@@ -40,6 +48,12 @@ export function Details(){
                 alt="Foto do usuário"
               />
               <Span title="Gabriel Vitebo" />
+              <CreatedAt>
+                <FiClock />
+                <p>02/02/23</p>
+                <span>às</span>
+                <p>16:52</p>
+              </CreatedAt>
             </div>
           </section>
           <Section>

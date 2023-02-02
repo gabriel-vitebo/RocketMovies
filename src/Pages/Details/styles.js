@@ -46,31 +46,31 @@ export const Content = styled.div`
       }
 
       label {
-        display: block;
         min-height: 2rem;
         min-width: 2rem;
-      }
-
-      label:has(input:checked) {  
-        background: ${({ theme }) => theme.COLORS.PRIMARY};
-        display: block;
+        align-items: center;
+        justify-content: center;
+        display: flex;
       }
 
       .star-rating-empaty {
+        stroke: ${({ theme }) => theme.COLORS.PRIMARY};
+        display: block;
         min-height: 2rem;
         min-width: 2rem;
-        fill: ${({ theme }) => theme.COLORS.PRIMARY};
-        stroke: ${({ theme }) => theme.COLORS.PRIMARY};
       }
 
-      .star-rating{ 
+      label:has(input:checked) .star-rating {
+        fill: ${({ theme }) => theme.COLORS.PRIMARY};
+        stroke: ${({ theme }) => theme.COLORS.PRIMARY};
+        display: block;
         min-height: 2rem;
         min-width: 2rem;
-        stroke: ${({ theme }) => theme.COLORS.PRIMARY};
       }
-      
-    }
-      
+
+      label:has(input:checked) .star-rating-empaty {
+        display: none;
+      }
     }
 
     .info-user-movie {
@@ -84,9 +84,42 @@ export const Content = styled.div`
         margin-right: 0.8rem;
       }
     }
-  
+  }
+
+  > p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
+    color: ${({ theme }) => theme.COLORS.SUB_TITLE};
+    line-height: 2.1rem;
+    margin-top: 4rem;
+    text-align: justify
+  }
 `
 
 export const CreatedAt = styled.div`
+  align-items: center;
+  display: flex;
+  margin-left: 0.8rem;
+  gap: 0.4rem;
 
+  > p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO};
+    color: ${({ theme }) => theme.COLORS.SUB_TITLE};
+  }
+
+  > span {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO};
+    color: ${({ theme }) => theme.COLORS.SUB_TITLE};
+  }
+
+  > svg {
+    font-size: 1.6rem;
+    margin-right: 0.4rem;
+    color: ${({ theme }) => theme.COLORS.PRIMARY};
+  }
 `
