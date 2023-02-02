@@ -1,9 +1,10 @@
 import { Header } from "../../Components/Header"
-import { FiArrowLeft } from "react-icons/fi"
+import { FiArrowLeft, FiStar } from "react-icons/fi"
 import { TextButton } from "../../Components/TextButton"
 import { Section } from "../../Components/Section"
 import { Tag } from "../../Components/Tag"
-import { Container, Content, Span, CreatedAt } from "./styles"
+import { Container, Content } from "./styles"
+import { Span } from "../../Components/Span"
 
 export function Details(){
   return (
@@ -15,12 +16,30 @@ export function Details(){
           <section>
             <div className="title-movie">
               <h1>Frozen</h1>
-              
+              <label>
+                < FiStar className="star-rating"/>
+                < FiStar className="star-rating-empaty"/>
+                <input type="radio" name="rating" id="rating1" />
+              </label>
+              <label>
+                <input type="radio" name="rating" id="rating2" />
+              </label>
+              <label>
+                <input type="radio" name="rating" id="rating3" />
+              </label>
+              <label>
+                <input type="radio" name="rating" id="rating4" />
+              </label>
+              <label>
+                <input type="radio" name="rating" id="rating5" />
+              </label>
             </div>
             <div className="info-user-movie">
-              <img src="" alt="Foto do usuário" />
-              <Span />
-              <CreatedAt />
+              <img
+                src="https://github.com/gabriel-vitebo.png"
+                alt="Foto do usuário"
+              />
+              <Span title="Gabriel Vitebo" />
             </div>
           </section>
           <Section>
