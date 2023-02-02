@@ -5,8 +5,9 @@ import { Container, NewNote, Content } from "./styles"
 
 export function Home(){
   return (
+    <>
+    <Header />
     <Container>
-      <Header />
       <NewNote>
         <h1>Meus filmes</h1>
         <div>
@@ -18,5 +19,6 @@ export function Home(){
       </NewNote>
       <Content></Content>
     </Container>
+    </>
   )
 }

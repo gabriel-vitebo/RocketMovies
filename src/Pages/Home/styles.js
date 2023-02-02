@@ -2,20 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+  max-width: 1929px;
+  margin: 0 auto;
   height: 100vh;
-  display: grid;
-  grid-template-rows: 12.8rem auto;
-  grid-template-areas:
-    "header"
-    "create"
-    "content";
+  display: flex;
+  flex-direction: column;
 `
 
 export const NewNote = styled.div`
   grid-area: create;
   display: flex;
   align-items: center;
-  margin: 5rem 10.7rem 3rem 10.7rem;
+  margin: 5rem 10rem 3rem 10rem;
   justify-content: space-between;
   height: 9rem;
   border: none;
