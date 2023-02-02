@@ -9,6 +9,7 @@ export default {
     TEXT_BUTTON: "#312E38",
     TEXT_NOTE: "#999591",
     BG_INPUT: "#262529",
+    BG_INPUT_PREVIEW: "#282124",
     BG_DARK: "#0D0C0F",
     BG: "#1C1B1E",
     BG_NOTE: "rgba(255, 133, 155, 0.05)",

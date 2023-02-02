@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FiStar } from "react-icons/fi"
 
 export const Container = styled.div`
   width: 100%;
@@ -8,26 +9,43 @@ export const Container = styled.div`
   grid-template-areas:
   "header"
   "content";
+
+  >main {
+    grid-area: content;
+    padding: 4.0rem 0;
+  }
 `
 
-export const NewNote = styled.div`
-  grid-area: create;
-  display: flex;
-  align-items: center;
-  margin: 5rem 10rem 3rem 10rem;
-  justify-content: space-between;
-  height: 9rem;
-  border: none;
+export const Content = styled.div`
+  max-width: 550px;
+  margin: 0 auto;
 
-  > div {
-    width: 20.7rem;
+  display: flex;
+  flex-direction: column;
+  > button:first-child {
+    align-self: flex-start;
   }
 
-  font-size: 3.2rem;
-  font-weight: 400;
-  font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
-  color: ${({ theme }) => theme.COLORS.SUB_TITLE};
+  > section {
+    .title-movie {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      h1 {
+        font-size: 3.6rem;
+        font-weight: 500;
+        font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
+        line-break: 4.7rem;
+        margin-right: 1rem;
+      }
+    }
+  }
 `
-export const Content = styled.section`
-  grid-area: content;
+
+export const Span  = styled.div`
+
+`
+export const CreatedAt = styled.div`
+
 `
