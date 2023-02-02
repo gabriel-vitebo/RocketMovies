@@ -5,6 +5,7 @@ export const Container = styled.header`
   grid-area: header;
   width: 100%;
   height: 11.6rem;
+  background: ${({ theme }) => theme.COLORS.BG};
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.LINE};
   justify-content: space-between;
   padding: 0 8rem;
@@ -19,6 +20,7 @@ export const Container = styled.header`
 
   > .setInput {
     width: 63rem;
+    margin: 0 5rem;
   }
 `
 
@@ -39,6 +41,7 @@ export const Profile = styled.div`
       font-size: 1.4rem;
       font-weight: 700;
       color: ${({ theme }) => theme.COLORS.SUB_TITLE};
+      
     }
 
     button {

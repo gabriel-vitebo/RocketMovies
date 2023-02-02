@@ -7,18 +7,45 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: 105px auto;
   grid-template-areas:
-  "header"
-  "content";
+    "header"
+    "content";
 
-  >main {
+  > main {
+    margin-top: 1.5rem;
     grid-area: content;
-    padding: 4.0rem 0;
+    padding: 4rem 0;
+    overflow-y: auto;
+    ::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.COLORS.PRIMARY};
+    }
   }
 `
 
 export const Content = styled.div`
   max-width: 550px;
+  height: 590px;
   margin: 0 auto;
+
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.COLORS.PRIMARY};
+  }
 
   display: flex;
   flex-direction: column;
@@ -93,7 +120,8 @@ export const Content = styled.div`
     color: ${({ theme }) => theme.COLORS.SUB_TITLE};
     line-height: 2.1rem;
     margin-top: 4rem;
-    text-align: justify
+    text-align: justify;
+    margin-right: 1rem;
   }
 `
 

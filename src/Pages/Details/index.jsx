@@ -68,6 +68,7 @@ export function Details(){
             E é para lá que a irmã dela, Anna, parte ao seu resgate, acompanhada
             de um jovem montanhista, sua rena espirituosa e um bem-humorado
             boneco de neve.
+            
           </p>
         </Content>
       </main>
