@@ -4,6 +4,7 @@ import { TextButton } from "../../Components/TextButton"
 import { Section } from "../../Components/Section"
 import { Tag } from "../../Components/Tag"
 import { Span } from "../../Components/Span"
+import { Rating } from "../../Components/Rating"
 import { Container, Content, CreatedAt } from "./styles"
 
 export function Details(){
@@ -16,31 +17,7 @@ export function Details(){
           <section>
             <div className="title-movie">
               <h1>Frozen</h1>
-              <label>
-                <FiStar className="star-rating" />
-                <FiStar className="star-rating-empaty" />
-                <input type="radio" name="rating" id="rating1" />
-              </label>
-              <label>
-                <FiStar className="star-rating" />
-                <FiStar className="star-rating-empaty" />
-                <input type="radio" name="rating" id="rating2" />
-              </label>
-              <label>
-                <FiStar className="star-rating" />
-                <FiStar className="star-rating-empaty" />
-                <input type="radio" name="rating" id="rating3" />
-              </label>
-              <label>
-                <FiStar className="star-rating" />
-                <FiStar className="star-rating-empaty" />
-                <input type="radio" name="rating" id="rating4" />
-              </label>
-              <label>
-                <FiStar className="star-rating" />
-                <FiStar className="star-rating-empaty" />
-                <input type="radio" name="rating" id="rating5" />
-              </label>
+              < Rating />
             </div>
             <div className="info-user-movie">
               <img
