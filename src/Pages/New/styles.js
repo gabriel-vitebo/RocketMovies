@@ -68,6 +68,13 @@ export const Form = styled.form`
     border-radius: 10px;
     padding-right: 16px;
     flex-wrap: wrap;
+
+    > .tag {
+      flex-basis: 180px;
+      flex-grow: 1;
+      flex-shrink: 0;
+      
+    }
   }
 
   > .tittle-and-rating {

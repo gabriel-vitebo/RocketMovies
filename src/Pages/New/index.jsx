@@ -24,10 +24,10 @@ export function New(){
             <Input type="number" placeholder="Sua nota (de 0 a 5)" />
           </div>
           <TextArea placeholder="Observações" />
-            <h2>Marcadores</h2>
+          <h2>Marcadores</h2>
           <div className="tags">
-            <ItemTag value="comedia" />
-            <ItemTag isNew  placeholder="Adicionar marcador"/>
+            <ItemTag value="comedia" className="tag" />
+            <ItemTag isNew placeholder="Adicionar marcador" className="tag" />
           </div>
         </Form>
       </main>
