@@ -1,5 +1,6 @@
 import { Header } from "../../Components/Header"
 import { TextButton } from "../../Components/TextButton"
+import { Button } from "../../Components/Button"
 import { Input } from "../../Components/Input"
 import { TextArea } from "../../Components/TextArea"
 

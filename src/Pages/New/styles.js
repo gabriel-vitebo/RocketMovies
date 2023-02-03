@@ -7,8 +7,23 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: 10.5rem auto;
   grid-template-areas:
-  "header"
-  "content";
+    "header"
+    "content";
+
+  > main {
+    overflow-y: auto;
+    ::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.COLORS.PRIMARY};
+    }
+  }
 `
 
 export const Form = styled.form`
@@ -33,7 +48,7 @@ export const Form = styled.form`
       justify-content: flex-start;
     }
   }
-
+  
   > .tittle-and-rating {
     display: flex;
     gap: 4rem;
