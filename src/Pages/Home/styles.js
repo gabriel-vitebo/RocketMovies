@@ -63,5 +63,6 @@ export const Content = styled.div`
 
   > Section {
     margin-bottom: 2.4rem;
+    margin-right: 1rem;
   }
 `

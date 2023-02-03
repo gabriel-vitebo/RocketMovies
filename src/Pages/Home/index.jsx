@@ -17,14 +17,16 @@ export function Home(){
       </NewNote>
       <Content>
         <Section>
-          <Note data={{
-            title: "Frozen", 
-            tags:[
-              {id: '1', name:'animação'},
-              {id: '2', name:'comédia'},
-              {id: '3', name:'3d'},
-            ] 
-          }} />
+          <Note
+            data={{
+              title: "Frozen",
+              tags: [
+                { id: "1", name: "animação" },
+                { id: "2", name: "comédia" },
+                { id: "3", name: "3d" },
+              ],
+            }}
+          />
         </Section>
       </Content>
     </Container>
