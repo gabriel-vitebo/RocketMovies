@@ -13,6 +13,7 @@ export default {
     BG_DARK: "#0D0C0F",
     BG: "#1C1B1E",
     BG_NOTE: "rgba(255, 133, 155, 0.05)",
+    WHITE: "#FFFFFF",
   },
 
   FONTS: {

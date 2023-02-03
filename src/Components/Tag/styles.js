@@ -6,8 +6,9 @@ export const Container = styled.span`
   font-family: ${({ theme }) => theme.FONTS.ROBOTO};
   font-weight: 400;
   line-height: 1.4rem;
-  background: ${({ theme }) => theme.COLORS.BG_INPUT_PREVIEW};
+  background: ${({ theme }) => theme.COLORS.TEXT_BUTTON};
   padding: 0.8rem 1.6rem;
   border-radius: 0.8rem;
   gap: 0.8rem;
+  color: ${({ theme }) => theme.COLORS.SPAN};
 `
