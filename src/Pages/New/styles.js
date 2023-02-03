@@ -67,6 +67,7 @@ export const Form = styled.form`
     margin-bottom: 8px;
     border-radius: 10px;
     padding-right: 16px;
+    flex-wrap: wrap;
   }
 
   > .tittle-and-rating {

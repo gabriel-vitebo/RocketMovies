@@ -1,9 +1,11 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+  display: flex;
+  align-items: center;
   > button {
     border: none;
-    background: ${({ theme }) => theme.COLORS.BG_INPUT};
+    background: none;
   }
 
   .button-delete {
@@ -13,10 +15,10 @@ export const Container = styled.div`
   .button-add {
     color: ${({ theme }) => theme.COLORS.PRIMARY};
   }
-  
+
   > input {
     height: 100%;
-    width: 11.3rem;
+    width: 100%;
     text-align: center;
     margin: 1.6rem;
     padding: 1.6rem;
@@ -32,6 +34,10 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.WHITE};
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_300};
+    }
+
+    &:hover {
+      background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.PRIMARY};
     }
   }
 `
