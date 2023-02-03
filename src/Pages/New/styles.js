@@ -23,6 +23,13 @@ export const Container = styled.div`
     ::-webkit-scrollbar-thumb {
       background: ${({ theme }) => theme.COLORS.PRIMARY};
     }
+
+    h2 {
+      font-size: 2rem;
+      font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
+      color: ${({ theme }) => theme.COLORS.TEXT_NOTE};
+      font-weight: 400;
+    }
   }
 `
 
@@ -47,8 +54,21 @@ export const Form = styled.form`
       display: flex;
       justify-content: flex-start;
     }
+
   }
-  
+
+  > .tags {
+    display: flex;
+    margin-top: 2.4rem;
+    align-items: center;
+    background-color: ${({ theme }) =>theme.COLORS.BG_DARK};
+    color: ${({ theme }) => theme.COLORS.TEXT_INPUT};
+    border: none;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    padding-right: 16px;
+  }
+
   > .tittle-and-rating {
     display: flex;
     gap: 4rem;

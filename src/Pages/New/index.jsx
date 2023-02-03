@@ -1,8 +1,8 @@
 import { Header } from "../../Components/Header"
 import { TextButton } from "../../Components/TextButton"
-import { Button } from "../../Components/Button"
 import { Input } from "../../Components/Input"
 import { TextArea } from "../../Components/TextArea"
+import { ItemTag } from "../../Components/ItemTag"
 
 
 import { FiArrowLeft } from "react-icons/fi"
@@ -24,6 +24,11 @@ export function New(){
             <Input placeholder="Sua nota (de 0 a 5)" />
           </div>
           <TextArea placeholder="Observações" />
+            <h2>Marcadores</h2>
+          <div className="tags">
+            <ItemTag value="comedia" />
+            <ItemTag isNew />
+          </div>
         </Form>
       </main>
     </Container>
