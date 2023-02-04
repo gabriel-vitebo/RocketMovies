@@ -41,6 +41,7 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content: flex-start;
     margin-bottom: 4rem;
+    
 
     h1 {
       font-size: 3.6rem;
@@ -54,14 +55,13 @@ export const Form = styled.form`
       display: flex;
       justify-content: flex-start;
     }
-
   }
 
   > .tags {
     display: flex;
     margin-top: 2.4rem;
     align-items: center;
-    background-color: ${({ theme }) =>theme.COLORS.BG_DARK};
+    background-color: ${({ theme }) => theme.COLORS.BG_DARK};
     color: ${({ theme }) => theme.COLORS.TEXT_INPUT};
     border: none;
     margin-bottom: 8px;
@@ -73,12 +73,41 @@ export const Form = styled.form`
       flex-basis: 180px;
       flex-grow: 1;
       flex-shrink: 0;
-      
+      width: ${({ isNew }) => (isNew ? "18rem" : "11.3rem")};
     }
   }
 
   > .tittle-and-rating {
     display: flex;
     gap: 4rem;
+    
+  }
+
+  > .SaveAndDeleteButtons {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+    .DeleteButton {
+      font-size: 1.6rem;
+      font-weight: 500;
+      font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
+      color: ${({ theme }) => theme.COLORS.PRIMARY};
+      background: ${({ theme }) => theme.COLORS.BG_DARK};
+      border-radius: 1rem;
+
+      width: 100%;
+      padding: 1.6rem 0;
+      align-items: center;
+      margin: 2.4rem 0 4.2rem 0;
+      &:disabled {
+        opacity: 0.5;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
   }
 `

@@ -17,13 +17,10 @@ export const Container = styled.div`
   font-weight: 400;
   font-family: ${({ theme }) => theme.FONTS.ROBOTO};
   color: ${({ theme }) => theme.COLORS.WHITE};
+  
+
   &::placeholder {
     color: ${({ theme }) => theme.COLORS.GRAY_300};
-  }
-
-  &:hover {
-    background-color: ${({ theme, isNew }) =>
-      isNew ? "transparent" : theme.COLORS.PRIMARY};
   }
 
   > button {
@@ -48,5 +45,9 @@ export const Container = styled.div`
     border: none;
     background: none;
     height: inherit;
+    font-size: 1.6rem;
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO};
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    font-weight: 400;
   }
 `

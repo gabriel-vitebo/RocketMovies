@@ -16,7 +16,7 @@ export function Home(){
         </div>
       </NewNote>
       <Content>
-        <Section>
+       <Section>
           <Note
             data={{
               title: "Frozen",
@@ -27,7 +27,7 @@ export function Home(){
               ],
             }}
           />
-        </Section>
+        </Section> 
       </Content>
     </Container>
   )

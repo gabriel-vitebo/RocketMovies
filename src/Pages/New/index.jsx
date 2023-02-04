@@ -3,6 +3,7 @@ import { TextButton } from "../../Components/TextButton"
 import { Input } from "../../Components/Input"
 import { TextArea } from "../../Components/TextArea"
 import { ItemTag } from "../../Components/ItemTag"
+import { Button } from "../../Components/Button"
 
 
 import { FiArrowLeft } from "react-icons/fi"
@@ -28,6 +29,10 @@ export function New(){
           <div className="tags">
             <ItemTag value="comedia" className="tag" />
             <ItemTag isNew placeholder="Adicionar marcador" className="tag" />
+          </div>
+          <div className="SaveAndDeleteButtons">
+            <button className="DeleteButton">Excluir filme</button>
+            <Button title="Salvar alterações"/>
           </div>
         </Form>
       </main>
