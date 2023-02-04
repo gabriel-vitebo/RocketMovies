@@ -1,4 +1,5 @@
 import { FiPlus } from "react-icons/fi"
+import { Link } from "react-router-dom"
 import { Container, NewNote, Content } from "./styles";
 import { Header } from "../../Components/Header"
 import { Button } from "../../Components/Button"
@@ -11,9 +12,9 @@ export function Home(){
       <Header />
       <NewNote>
         <h1>Meus filmes</h1>
-        <div>
+        <Link to="/new" className="ButtonToCreateANewNote">
           <Button icon={FiPlus} title="Adicionar filme" />
-        </div>
+        </Link>
       </NewNote>
       <Content>
        <Section>

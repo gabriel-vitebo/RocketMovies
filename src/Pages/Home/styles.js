@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Container = styled.div`
   overflow-y: auto;
   ::-webkit-scrollbar {
@@ -31,19 +32,18 @@ export const NewNote = styled.div`
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
-  width:1137px;
+  width: 1137px;
   margin-top: 5rem;
-  
-  >h1 {
+
+  > h1 {
     font-size: 3.2rem;
     font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
 
-  >div {
+  > .ButtonToCreateANewNote {
     width: 20.7rem;
   }
-  
 `
 export const Content = styled.div`
   ::-webkit-scrollbar {

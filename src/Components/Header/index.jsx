@@ -1,5 +1,6 @@
 import { Input } from "../Input"
-import{ Container, Profile } from "./styles"
+import { Link } from "react-router-dom"
+import{ Container, Profile} from "./styles"
 
 export function Header(){
   return (
@@ -8,10 +9,12 @@ export function Header(){
       <div className="setInput">
         <Input type="text" placeholder="Pesquisar pelo título" />
       </div>
-      <Profile>
+      <Profile to="/profile">
         <div className="setProfile">
           <h2>Gabriel Vitebo</h2>
-          <button>Sair</button>
+          <Link to="/">
+            <button className="exit">Sair</button>
+          </Link>
         </div>
         <img
           src="https://github.com/gabriel-vitebo.png"

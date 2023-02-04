@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
 export const Container = styled.header`
   display: flex;
@@ -18,13 +19,21 @@ export const Container = styled.header`
     color: ${({ theme }) => theme.COLORS.PRIMARY};
   }
 
+  .exit {
+    font-size: 1.4rem;
+    border: none;
+    color: ${({ theme }) => theme.COLORS.TEXT_INPUT};
+    font-weight: 400;
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
+  }
+
   > .setInput {
     width: 63rem;
     margin: 0 5rem;
   }
 `
 
-export const Profile = styled.div`
+export const Profile = styled(Link)`
   display: flex;
   align-items: center;
 
@@ -42,14 +51,6 @@ export const Profile = styled.div`
       font-weight: 700;
       color: ${({ theme }) => theme.COLORS.SUB_TITLE};
       
-    }
-
-    button {
-      font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: ${({ theme }) => theme.COLORS.TEXT_INPUT};
-      border: none;
     }
   }
 

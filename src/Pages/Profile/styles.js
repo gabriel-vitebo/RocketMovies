@@ -12,6 +12,12 @@ export const Container = styled.div`
     align-items: center;
     padding: 0 12.4rem;
   }
+
+  > .buttonBackToHome {
+    display: flex;
+    align-items: center;
+    padding: 0 12.4rem;
+  }
 `
 
 export const Form = styled.form`
