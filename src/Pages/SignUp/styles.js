@@ -37,7 +37,7 @@ export const Form = styled.form`
     color: ${({ theme }) => theme.COLORS.GRAY};
   }
 
-  > div {
+  > .ButtonBackToLogin {
     display: flex;
     justify-content: center;
     width: 100%;

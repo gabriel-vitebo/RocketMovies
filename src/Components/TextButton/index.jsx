@@ -1,6 +1,6 @@
 import { Container } from "./styles"
 
-export function TextButton({icon: Icon, title, isActive = false, ...rest}){
+export function TextButton({icon: Icon, link, title, isActive = false, ...rest}){
   return(
     <Container
       type="button"

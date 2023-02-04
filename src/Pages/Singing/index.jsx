@@ -1,4 +1,5 @@
 import { FiLock, FiMail } from "react-icons/fi"
+import { Link } from "react-router-dom"
 import { Container, Form, BackgroundImg } from "./styles"
 import { Input } from "../../Components/Input"
 import { Button } from "../../Components/Button"
@@ -26,7 +27,7 @@ export function Singing() {
         <Button title="Entrar" />
 
         <div>
-          <a href="#">Criar conta</a>
+          <Link to="/register">Criar conta</Link>
         </div>
       </Form>
       <BackgroundImg />
