@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.button`
   font-size: 1.6rem;
@@ -6,6 +6,7 @@ export const Container = styled.button`
   font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
   color: ${({ theme }) => theme.COLORS.TEXT_BUTTON};
   background: ${({ theme }) => theme.COLORS.PRIMARY};
+  border: none;
   border-radius: 1rem;
 
   width: 100%;
@@ -19,5 +20,5 @@ export const Container = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .8rem
+  gap: 0.8rem;
 `

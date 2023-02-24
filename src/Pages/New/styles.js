@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.div`
   width: 100%;
@@ -41,7 +41,6 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content: flex-start;
     margin-bottom: 4rem;
-    
 
     h1 {
       font-size: 3.6rem;
@@ -80,7 +79,6 @@ export const Form = styled.form`
   > .tittle-and-rating {
     display: flex;
     gap: 4rem;
-    
   }
 
   > .SaveAndDeleteButtons {
@@ -94,6 +92,7 @@ export const Form = styled.form`
       font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
       color: ${({ theme }) => theme.COLORS.PRIMARY};
       background: ${({ theme }) => theme.COLORS.BG_DARK};
+      border: none;
       border-radius: 1rem;
 
       width: 100%;

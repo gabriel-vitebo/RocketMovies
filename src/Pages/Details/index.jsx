@@ -7,7 +7,7 @@ import { Span } from "../../Components/Span"
 import { Rating } from "../../Components/Rating"
 import { Container, Content, CreatedAt } from "./styles"
 
-export function Details(){
+export function Details() {
   return (
     <Container>
       <Header />
@@ -17,7 +17,7 @@ export function Details(){
           <section>
             <div className="title-movie">
               <h1>Frozen</h1>
-              < Rating />
+              <Rating />
             </div>
             <div className="info-user-movie">
               <img
