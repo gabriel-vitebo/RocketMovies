@@ -1,7 +1,7 @@
-import { api } from "../../services/api"
 import { useState } from "react"
 import { FiMail, FiLock, FiUser, FiArrowLeft } from "react-icons/fi"
 import { Link, useNavigate } from "react-router-dom"
+import { api } from "../../services/api"
 import { Container, Form, Background } from "./styles"
 import { Button } from "../../Components/Button"
 import { Input } from "../../Components/Input"
