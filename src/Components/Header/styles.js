@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 import { Link } from "react-router-dom"
 
 export const Container = styled.header`
@@ -34,23 +34,29 @@ export const Container = styled.header`
 `
 
 export const Profile = styled(Link)`
-  display: flex;
-  align-items: center;
+  display: grid;
+  height: 6.4rem;
+  justify-items: end;
+  align-items: stretch;
+  grid-template-columns: 1fr 6.4rem;
+  grid-template-areas:
+    "name photo"
+    "exit photo";
+
+  gap: 1rem;
 
   > .setProfile {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    margin-right: .8rem;
 
     h2 {
       font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
       font-size: 1.4rem;
       font-weight: 700;
       color: ${({ theme }) => theme.COLORS.SUB_TITLE};
-      
+      grid-area: name;
     }
   }
 
@@ -59,5 +65,16 @@ export const Profile = styled(Link)`
     height: 6.4rem;
     border-radius: 50%;
     border: 2px solid ${({ theme }) => theme.COLORS.LINE};
+    grid-area: photo;
   }
+`
+
+export const Exit = styled.button`
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: ${({ theme }) => theme.FONTS.ROBOTO_SLAB};
+  color: ${({ theme }) => theme.COLORS.TEXT_INPUT};
+  grid-area: exit;
+
+  border: none;
 `
