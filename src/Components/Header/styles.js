@@ -33,7 +33,7 @@ export const Container = styled.header`
   }
 `
 
-export const Profile = styled(Link)`
+export const Profile = styled.div`
   display: grid;
   height: 6.4rem;
   justify-items: end;
@@ -45,7 +45,7 @@ export const Profile = styled(Link)`
 
   gap: 1rem;
 
-  > .setProfile {
+  .setProfile {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,7 +60,7 @@ export const Profile = styled(Link)`
     }
   }
 
-  > img {
+  img {
     width: 6.4rem;
     height: 6.4rem;
     border-radius: 50%;
