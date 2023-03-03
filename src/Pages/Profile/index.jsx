@@ -11,12 +11,23 @@ import { Input } from "../../Components/Input"
 import { Button } from "../../Components/Button"
 
 export function Profile() {
-  const { user } = useAuth()
+  const { user, updateProfile } = useAuth()
 
   const [name, setName] = useState(user.name)
   const [email, setEmail] = useState(user.email)
   const [oldPassword, setOldPassword] = useState()
   const [newPassword, setNewPassword] = useState()
+
+  async function handleUpdate() {
+    const user = {
+      name,
+      email,
+      password: newPassword,
+      old_password: oldPassword,
+    }
+
+    await updateProfile({ user })
+  }
 
   return (
     <Container>
@@ -62,7 +73,7 @@ export function Profile() {
           icon={FiLock}
           onChange={(e) => setNewPassword(e.target.value)}
         />
-        <Button title="Salvar" />
+        <Button title="Salvar" onClick={handleUpdate} />
       </Form>
     </Container>
   )
