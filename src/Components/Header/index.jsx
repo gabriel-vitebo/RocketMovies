@@ -2,9 +2,15 @@ import { Input } from "../Input"
 import { Container, Profile, Exit } from "./styles"
 import { useAuth } from "../../hooks/auth"
 import { Link } from "react-router-dom"
+import { api } from "../../services/api"
+import avatarPlaceHolder from "../../assets/empaty-profile.svg"
 
 export function Header() {
-  const { signOut } = useAuth()
+  const { signOut, user } = useAuth()
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceHolder
 
   return (
     <Container>
@@ -15,17 +21,14 @@ export function Header() {
       <Profile>
         <div className="setProfile">
           <Link to="/profile">
-            <h2>Gabriel Vitebo</h2>
+            <h2>{user.name}</h2>
           </Link>
           <Exit type="button" onClick={signOut}>
             Sair
           </Exit>
         </div>
         <Link to="/profile">
-          <img
-            src="https://github.com/gabriel-vitebo.png"
-            alt="Foto de perfil do usuário"
-          />
+          <img src={avatarUrl} alt={user.name} />
         </Link>
       </Profile>
     </Container>
