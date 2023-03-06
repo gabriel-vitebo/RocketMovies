@@ -8,17 +8,26 @@ import { ItemTag } from "../../Components/ItemTag"
 import { Button } from "../../Components/Button"
 
 import { FiArrowLeft } from "react-icons/fi"
+import { useState } from "react"
 
 import { Container, Form } from "./styles"
 
 export function New() {
+  const [tags, setTags] = useState([])
+  const [newTag, setNewTag] = useState("")
+
+  function handleAddTag() {
+    setTags((prevState) => [...prevState, newTag])
+    setNewTag("")
+  }
+
   return (
     <Container>
       <Header />
       <main>
         <Form>
           <header>
-            <Link to="/" >
+            <Link to="/">
               <TextButton title="voltar" icon={FiArrowLeft} />
             </Link>
             <h1>Novo Filme</h1>
@@ -30,8 +39,22 @@ export function New() {
           <TextArea placeholder="Observações" />
           <h2>Marcadores</h2>
           <div className="tags">
-            <ItemTag value="comedia" className="tag" />
-            <ItemTag isNew placeholder="Adicionar marcador" className="tag" />
+            {tags.map((tag, index) => (
+              <ItemTag
+                key={String(index)}
+                value={tag}
+                onClick={() => {}}
+                className="tag"
+              />
+            ))}
+            <ItemTag
+              isNew
+              placeholder="Adicionar marcador"
+              className="tag"
+              onChange={(e) => setNewTag(e.target.value)}
+              value={newTag}
+              onClick={handleAddTag}
+            />
           </div>
           <div className="SaveAndDeleteButtons">
             <button className="DeleteButton">Excluir filme</button>
