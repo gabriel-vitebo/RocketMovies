@@ -19,6 +19,17 @@ export const Container = styled.button`
     margin-bottom: 0.6rem;
   }
 
+  > span {
+    display: flex;
+    justify-self: start;
+    color: ${({ theme }) => theme.COLORS.TEXT_NOTE};
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO};
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: justify;
+    margin: 1.5rem 0;
+  }
+
   > p {
     color: ${({ theme }) => theme.COLORS.TEXT_NOTE};
     font-family: ${({ theme }) => theme.FONTS.ROBOTO};
@@ -35,5 +46,40 @@ export const Container = styled.button`
   > footer {
     display: flex;
     justify-content: flex-start;
+  }
+
+  > .rating {
+    display: flex;
+    gap: 0.6rem;
+    label {
+      min-height: 2rem;
+      min-width: 2rem;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    .star-rating-empaty {
+      stroke: ${({ theme }) => theme.COLORS.PRIMARY};
+      display: block;
+      min-height: 2rem;
+      min-width: 2rem;
+    }
+
+    label:has(input:checked) .star-rating {
+      fill: ${({ theme }) => theme.COLORS.PRIMARY};
+      stroke: ${({ theme }) => theme.COLORS.PRIMARY};
+      display: block;
+      min-height: 2rem;
+      min-width: 2rem;
+    }
+
+    label:has(input:checked) .star-rating-empaty {
+      display: none;
+    }
   }
 `
