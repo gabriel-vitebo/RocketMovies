@@ -2,11 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  input {
-    display: none;
-  }
+  gap: 0.6rem;
 
   label {
     min-height: 2rem;
@@ -14,6 +10,10 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     display: flex;
+  }
+
+  input[type="checkbox"] {
+    display: none;
   }
 
   .star-rating-empaty {
