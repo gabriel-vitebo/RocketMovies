@@ -1,15 +1,29 @@
+import { useEffect, useState } from "react"
 import { FiPlus } from "react-icons/fi"
 import { Link } from "react-router-dom"
-import { Container, NewNote, Content } from "./styles";
+import { api } from "../../services/api"
+import { Container, NewNote, Content } from "./styles"
 import { Header } from "../../Components/Header"
 import { Button } from "../../Components/Button"
 import { Note } from "../../Components/Note"
 import { Section } from "../../Components/Section"
 
-export function Home(){
+export function Home() {
+  const [search, setSearch] = useState("")
+  const [notes, setNotes] = useState([])
+
+  useEffect(() => {
+    async function fetchNotes() {
+      const response = await api.get(`/movienotes?title=${search}`)
+      setNotes(response.data)
+    }
+
+    fetchNotes()
+  }, [search])
+
   return (
     <Container>
-      <Header />
+      <Header onChange={setSearch} />
       <NewNote>
         <h1>Meus filmes</h1>
         <Link to="/new" className="ButtonToCreateANewNote">
@@ -17,18 +31,11 @@ export function Home(){
         </Link>
       </NewNote>
       <Content>
-       <Section>
-          <Note
-            data={{
-              title: "Frozen",
-              tags: [
-                { id: "1", name: "animação" },
-                { id: "2", name: "comédia" },
-                { id: "3", name: "3d" },
-              ],
-            }}
-          />
-        </Section> 
+        <Section>
+          {notes.map((note) => (
+            <Note key={String(note.id)} data={note} />
+          ))}
+        </Section>
       </Content>
     </Container>
   )

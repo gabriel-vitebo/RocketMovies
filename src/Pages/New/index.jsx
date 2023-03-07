@@ -34,6 +34,16 @@ export function New() {
   }
 
   async function handleNewNote() {
+    if (!title) {
+      return alert("Titulo é obrigatório!")
+    }
+
+    if (newTag) {
+      return alert(
+        "Uma tag não foi adicionada, clique para adicionar ou será descartada!"
+      )
+    }
+
     await api.post("/movienotes", {
       title,
       rating,
