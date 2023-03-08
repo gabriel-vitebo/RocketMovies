@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { api } from "../../services/api"
+import { useAuth } from "../../hooks/auth"
 import { Header } from "../../Components/Header"
 import { FiArrowLeft, FiClock } from "react-icons/fi"
 import { TextButton } from "../../Components/TextButton"
@@ -11,6 +12,7 @@ import { Rating } from "../../Components/Rating"
 import { Container, Content, CreatedAt } from "./styles"
 
 export function Details() {
+  const { user } = useAuth()
   const [data, setData] = useState(null)
   const params = useParams()
   useEffect(() => {
@@ -33,11 +35,8 @@ export function Details() {
                 <Rating />
               </div>
               <div className="info-user-movie">
-                <img
-                  src="https://github.com/gabriel-vitebo.png"
-                  alt="Foto do usuário"
-                />
-                <Span title="Gabriel Vitebo" />
+                <img src={user.avatar} alt="Foto do usuário" />
+                <Span title={user.name} />
                 <CreatedAt>
                   <FiClock />
                   <p>{data.updated_at}</p>
@@ -46,11 +45,13 @@ export function Details() {
                 </CreatedAt>
               </div>
             </section>
-            <Section>
-              <Tag title="Comédia" />
-              <Tag title="Animação" />
-              <Tag title="3D" />
-            </Section>
+            {data.tags && (
+              <Section>
+                {data.tags.map((tag) => (
+                  <Tag key={String(tag.id)} title={tag.name} />
+                ))}
+              </Section>
+            )}
             <p>{data.description}</p>
           </Content>
         </main>
