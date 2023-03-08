@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { FiPlus } from "react-icons/fi"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { api } from "../../services/api"
 import { Container, NewNote, Content } from "./styles"
 import { Header } from "../../Components/Header"
@@ -11,6 +11,11 @@ import { Section } from "../../Components/Section"
 export function Home() {
   const [search, setSearch] = useState("")
   const [notes, setNotes] = useState([])
+  const navigate = useNavigate()
+
+  function handleDetails(id) {
+    navigate(`/details/${id}`)
+  }
 
   useEffect(() => {
     async function fetchNotes() {
@@ -33,7 +38,11 @@ export function Home() {
       <Content>
         <Section>
           {notes.map((note) => (
-            <Note key={String(note.id)} data={note} />
+            <Note
+              key={String(note.id)}
+              data={note}
+              onClick={() => handleDetails(note.id)}
+            />
           ))}
         </Section>
       </Content>
