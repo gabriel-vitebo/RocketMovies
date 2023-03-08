@@ -44,15 +44,22 @@ export function New() {
       )
     }
 
-    await api.post("/movienotes", {
-      title,
-      rating,
-      description,
-      tags,
-    })
-
-    alert("Filme cadastrado com sucesso")
-    navigate("/")
+    await api
+      .post("/movienotes", {
+        title,
+        rating,
+        description,
+        tags,
+      })
+      .then(() => {
+        alert("Filme adicionado com sucesso!")
+        navigate("/")
+      })
+      .catch((error) => {
+        if (error.response) {
+          return alert(error.response.data.message)
+        }
+      })
   }
 
   return (
