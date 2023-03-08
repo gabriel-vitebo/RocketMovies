@@ -77,6 +77,8 @@ export const Content = styled.div`
         width: 1.6rem;
         height: 1.6rem;
         margin-right: 0.8rem;
+        border-radius: 50%;
+        border: 2px solid ${({ theme }) => theme.COLORS.LINE};
       }
     }
   }

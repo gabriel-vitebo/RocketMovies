@@ -10,11 +10,23 @@ import { Tag } from "../../Components/Tag"
 import { Span } from "../../Components/Span"
 import { Rating } from "../../Components/Rating"
 import { Container, Content, CreatedAt } from "./styles"
+import avatarPlaceHolder from "../../assets/empaty-profile.svg"
 
 export function Details() {
   const { user } = useAuth()
   const [data, setData] = useState(null)
   const params = useParams()
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceHolder
+
+  let maxStarCount = 5
+  let fullStarCount = data.rating
+  let emptyStarCount = maxStarCount - fullStarCount
+
+  let fullStarsList = new Array(fullStarCount).fill(true)
+  let emptyStarsList = new Array(emptyStarCount).fill(false)
+  let stars = fullStarsList.concat(emptyStarsList)
   useEffect(() => {
     async function fetchNoteDetails() {
       const response = await api.get(`/movienotes/${params.id}`)
@@ -32,16 +44,16 @@ export function Details() {
             <section>
               <div className="title-movie">
                 <h1>{data.title}</h1>
-                <Rating />
+                {stars.map((star) => (
+                  <Rating star={star} />
+                ))}
               </div>
               <div className="info-user-movie">
-                <img src={user.avatar} alt="Foto do usuário" />
+                <img src={avatarUrl} alt={`foto de usuário de ${user.name}`} />
                 <Span title={user.name} />
                 <CreatedAt>
                   <FiClock />
                   <p>{data.updated_at}</p>
-                  <span>às</span>
-                  <p>16:52</p>
                 </CreatedAt>
               </div>
             </section>
