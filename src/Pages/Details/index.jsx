@@ -34,10 +34,14 @@ export function Details() {
   let emptyStarsList = new Array(emptyStarCount).fill(false)
   let stars = fullStarsList.concat(emptyStarsList)
 
+  const yearDayAndMonth = data ? data.updated_at.slice(0, 10) : 0
+  const hoursAndMinutes = data ? data.updated_at.slice(10, 16) : 0
+
   useEffect(() => {
     async function fetchNoteDetails() {
       const response = await api.get(`/movienotes/${params.id}`)
       setData(response.data)
+      console.log(response.data.updated_at)
     }
     fetchNoteDetails()
   }, [])
@@ -64,7 +68,7 @@ export function Details() {
                 <Span title={user.name} />
                 <CreatedAt>
                   <FiClock />
-                  <p>{data.updated_at}</p>
+                  <p>{`${yearDayAndMonth} às  ${hoursAndMinutes}`}</p>
                 </CreatedAt>
               </div>
             </section>
