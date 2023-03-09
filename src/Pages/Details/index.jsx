@@ -21,6 +21,14 @@ export function Details() {
     navigate("/")
   }
 
+  async function handleRemove() {
+    const confirm = window.confirm("Deseja remove o filme?")
+    if (confirm) {
+      await api.delete(`/movienotes/${params.id}`)
+      navigate("/")
+    }
+  }
+
   const params = useParams()
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
@@ -51,11 +59,14 @@ export function Details() {
       {data && (
         <main>
           <Content>
-            <TextButton
-              title="voltar"
-              icon={FiArrowLeft}
-              onClick={handleBackHome}
-            />
+            <div className="button-text">
+              <TextButton
+                title="voltar"
+                icon={FiArrowLeft}
+                onClick={handleBackHome}
+              />
+              <TextButton title="Exluir filme" onClick={handleRemove} />
+            </div>
             <section>
               <div className="title-movie">
                 <h1>{data.title}</h1>

@@ -52,6 +52,11 @@ export const Content = styled.div`
     align-self: flex-start;
   }
 
+  > .button-text {
+    display: flex;
+    justify-content: space-between;
+  }
+
   > section {
     .title-movie {
       display: flex;
