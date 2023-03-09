@@ -1,12 +1,18 @@
 import { Input } from "../Input"
 import { Container, Profile, Exit } from "./styles"
 import { useAuth } from "../../hooks/auth"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { api } from "../../services/api"
 import avatarPlaceHolder from "../../assets/empaty-profile.svg"
 
 export function Header() {
   const { signOut, user } = useAuth()
+  const navigate = useNavigate()
+
+  function handleSignOut() {
+    navigate("/")
+    signOut()
+  }
 
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
@@ -23,7 +29,7 @@ export function Header() {
           <Link to="/profile">
             <h2>{user.name}</h2>
           </Link>
-          <Exit type="button" onClick={signOut}>
+          <Exit type="button" onClick={handleSignOut}>
             Sair
           </Exit>
         </div>
