@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { api } from "../../services/api"
 import { useAuth } from "../../hooks/auth"
 import { Header } from "../../Components/Header"
@@ -15,18 +15,25 @@ import avatarPlaceHolder from "../../assets/empaty-profile.svg"
 export function Details() {
   const { user } = useAuth()
   const [data, setData] = useState(null)
+  const navigate = useNavigate()
+
+  function handleBackHome() {
+    navigate("/")
+  }
+
   const params = useParams()
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
     : avatarPlaceHolder
 
   let maxStarCount = 5
-  let fullStarCount = data.rating
+  let fullStarCount = data ? data.rating : 0
   let emptyStarCount = maxStarCount - fullStarCount
 
   let fullStarsList = new Array(fullStarCount).fill(true)
   let emptyStarsList = new Array(emptyStarCount).fill(false)
   let stars = fullStarsList.concat(emptyStarsList)
+
   useEffect(() => {
     async function fetchNoteDetails() {
       const response = await api.get(`/movienotes/${params.id}`)
@@ -40,7 +47,11 @@ export function Details() {
       {data && (
         <main>
           <Content>
-            <TextButton title="voltar" icon={FiArrowLeft} />
+            <TextButton
+              title="voltar"
+              icon={FiArrowLeft}
+              onClick={handleBackHome}
+            />
             <section>
               <div className="title-movie">
                 <h1>{data.title}</h1>
