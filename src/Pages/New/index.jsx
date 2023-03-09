@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 import { api } from "../../services/api"
 
@@ -23,6 +23,15 @@ export function New() {
   const [newTag, setNewTag] = useState("")
 
   const navigate = useNavigate()
+
+  function handleBackHome() {
+    const confirm = window.confirm(
+      "Deseja voltar? o Filme não foi salvo e será descartado, caso queira salvar o filme, clique em 'Salvar alterações'"
+    )
+    if (confirm) {
+      navigate(-1)
+    }
+  }
 
   function handleAddTag() {
     setTags((prevState) => [...prevState, newTag])
@@ -53,7 +62,7 @@ export function New() {
       })
       .then(() => {
         alert("Filme adicionado com sucesso!")
-        navigate("/")
+        navigate(-1)
       })
       .catch((error) => {
         if (error.response) {
@@ -68,9 +77,11 @@ export function New() {
       <main>
         <Form>
           <header>
-            <Link to="/">
-              <TextButton title="voltar" icon={FiArrowLeft} />
-            </Link>
+            <TextButton
+              onClick={handleBackHome}
+              title="voltar"
+              icon={FiArrowLeft}
+            />
             <h1>Novo Filme</h1>
           </header>
           <div className="tittle-and-rating">
@@ -107,10 +118,7 @@ export function New() {
               onClick={handleAddTag}
             />
           </div>
-          <div className="SaveAndDeleteButtons">
-            <button className="DeleteButton">Excluir filme</button>
-            <Button title="Salvar alterações" onClick={handleNewNote} />
-          </div>
+          <Button title="Salvar alterações" onClick={handleNewNote} />
         </Form>
       </main>
     </Container>

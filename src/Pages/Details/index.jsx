@@ -18,14 +18,14 @@ export function Details() {
   const navigate = useNavigate()
 
   function handleBackHome() {
-    navigate("/")
+    navigate(-1)
   }
 
   async function handleRemove() {
     const confirm = window.confirm("Deseja remove o filme?")
     if (confirm) {
       await api.delete(`/movienotes/${params.id}`)
-      navigate("/")
+      navigate(-1)
     }
   }
 

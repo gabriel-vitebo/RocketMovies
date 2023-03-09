@@ -1,8 +1,7 @@
 import { useState } from "react"
-
+import { useNavigate } from "react-router-dom"
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi"
 import { Container, Form, Avatar } from "./styles"
-import { Link } from "react-router-dom"
 
 import { useAuth } from "../../hooks/auth"
 
@@ -15,6 +14,7 @@ import { Button } from "../../Components/Button"
 
 export function Profile() {
   const { user, updateProfile } = useAuth()
+  const navigate = useNavigate()
 
   const [name, setName] = useState(user.name)
   const [email, setEmail] = useState(user.email)
@@ -46,13 +46,18 @@ export function Profile() {
     const imagePreview = URL.createObjectURL(file)
     setAvatar(imagePreview)
   }
+  function handleBackHome() {
+    navigate(-1)
+  }
 
   return (
     <Container>
       <header>
-        <Link to="/" className="buttonBackToHome">
-          <TextButton icon={FiArrowLeft} title="Voltar" />
-        </Link>
+        <TextButton
+          onClick={handleBackHome}
+          icon={FiArrowLeft}
+          title="Voltar"
+        />
       </header>
       <Form>
         <Avatar>
