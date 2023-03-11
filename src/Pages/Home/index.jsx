@@ -17,6 +17,10 @@ export function Home() {
     navigate(`/details/${id}`)
   }
 
+  function onChangeInput(value) {
+    setSearch(value)
+  }
+
   useEffect(() => {
     async function fetchNotes() {
       const response = await api.get(`/movienotes?title=${search}`)
@@ -28,7 +32,7 @@ export function Home() {
 
   return (
     <Container>
-      <Header onChange={setSearch} />
+      <Header onChangeSourceInput={onChangeInput} />
       <NewNote>
         <h1>Meus filmes</h1>
         <Link to="/new" className="ButtonToCreateANewNote">

@@ -49,7 +49,6 @@ export function Details() {
     async function fetchNoteDetails() {
       const response = await api.get(`/movienotes/${params.id}`)
       setData(response.data)
-      console.log(response.data.updated_at)
     }
     fetchNoteDetails()
   }, [])

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { api } from "../../services/api"
 import avatarPlaceHolder from "../../assets/empaty-profile.svg"
 
-export function Header() {
+export function Header({ onChangeSourceInput }) {
   const { signOut, user } = useAuth()
   const navigate = useNavigate()
 
@@ -22,7 +22,11 @@ export function Header() {
     <Container>
       <h1>RocketMovies</h1>
       <div className="setInput">
-        <Input type="text" placeholder="Pesquisar pelo título" />
+        <Input
+          type="text"
+          placeholder="Pesquisar pelo título"
+          onChange={(e) => onChangeSourceInput(e.target.value)}
+        />
       </div>
       <Profile>
         <div className="setProfile">
