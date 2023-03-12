@@ -22,12 +22,10 @@ export function SignUp() {
     api
       .post("/users", { name, email, password })
       .then(() => {
-        console.log("entrou")
         alert("Usuário cadastrado com sucesso!")
         navigate("/")
       })
       .catch((error) => {
-        console.log("entrou aqui")
         if (error.response) {
           alert(error.response.data.message)
         } else {
