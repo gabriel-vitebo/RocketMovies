@@ -34,7 +34,7 @@ Esse projeto está sob a licença MIT.
 ---
 
 <a href="https://www.linkedin.com/in/gabriel-alves-vitebo-2978ab177/">
- <img style="border-radius: 50%;" src="https://github.com/gabriel-vitebo.png" width="100px;" alt=""/>
+ <img style="border-radius: 50%;" src="https://github.com/gabriel-vitebo.png" width="100px;" alt="Foto de perfil do github de Gabriel Vitebo"/>
  <br />
  <sub><b>Gabriel Vitebo</b></sub></a> <a href="https://www.linkedin.com/in/gabriel-alves-vitebo-2978ab177/" >✅</a>
 
