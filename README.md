@@ -27,7 +27,7 @@ Esse é um site onde você consegue organizar os filmes já assistidos, Crie uma
 
 ## Licença
 
-Esse projeto está sob a licença MIT.
+Esse projeto está sob a licença [MIT](https://github.com/gabriel-vitebo/RocketMovies/blob/master/LICENSE).
 
 ### Autor
 
